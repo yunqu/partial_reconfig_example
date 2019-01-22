@@ -1,5 +1,9 @@
 set overlay_name "gpio_pr"
 set design_name "gpio_pr"
+set pr_region "gpio_0"
+set rm_0 "led_0"
+set rm_1 "led_5"
+set rm_2 "led_a"
 
 # open project and block design
 open_project -quiet ./${overlay_name}/${overlay_name}.xpr
@@ -31,3 +35,8 @@ foreach  { impl_run } $child_impl_runs  {
         file copy -force $bit ./
     }
 }
+
+# rename partial bit files
+file rename -force ${design_name}_i_${pr_region}_rm_${rm_0}_partial.bit ${rm_0}.bit
+file rename -force ${design_name}_i_${pr_region}_rm_${rm_1}_partial.bit ${rm_1}.bit
+file rename -force ${design_name}_i_${pr_region}_rm_${rm_2}_partial.bit ${rm_2}.bit
