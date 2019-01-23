@@ -1816,6 +1816,10 @@ proc create_root_design { parentCell } {
   # Restore current instance
   current_bd_instance $oldCurInst
 
+  # Create PFM attributes
+  set_property PFM_NAME {xilinx.com:xd:${overlay_name}:1.0} [get_files [current_bd_design].bd]
+
+
   validate_bd_design
   save_bd_design
 }

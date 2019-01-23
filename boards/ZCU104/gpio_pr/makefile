@@ -20,5 +20,4 @@ check_timing:
 	vivado -mode batch -source check_$(overlay_name).tcl -notrace
 
 clean:
-	rm -rf $(overlay_name) *.jou *.log
-	rm -rf .dsa
+	rm -rf $(overlay_name) *.jou *.log NA

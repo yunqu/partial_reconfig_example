@@ -40,3 +40,9 @@ foreach  { impl_run } $child_impl_runs  {
 file rename -force ${design_name}_i_${pr_region}_rm_${rm_0}_partial.bit ${rm_0}.bit
 file rename -force ${design_name}_i_${pr_region}_rm_${rm_1}_partial.bit ${rm_1}.bit
 file rename -force ${design_name}_i_${pr_region}_rm_${rm_2}_partial.bit ${rm_2}.bit
+
+# copy hwh files
+file copy -force ./${overlay_name}/${overlay_name}.srcs/sources_1/bd/${design_name}/hw_handoff/${design_name}.hwh ${overlay_name}.hwh
+file copy -force ./${overlay_name}/${overlay_name}.srcs/sources_1/bd/rm_${rm_0}/hw_handoff/rm_${rm_0}.hwh ${rm_0}.hwh
+file copy -force ./${overlay_name}/${overlay_name}.srcs/sources_1/bd/rm_${rm_1}/hw_handoff/rm_${rm_1}.hwh ${rm_1}.hwh
+file copy -force ./${overlay_name}/${overlay_name}.srcs/sources_1/bd/rm_${rm_2}/hw_handoff/rm_${rm_2}.hwh ${rm_2}.hwh
